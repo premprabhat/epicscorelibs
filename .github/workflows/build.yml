@@ -17,20 +17,6 @@ jobs:
             source: true
 
           # Linux py builds x64
-          - name: linux 2.7 amd64
-            os: ubuntu-latest
-            pyver: cp27-cp27m
-            piparch: manylinux1_x86_64
-
-          - name: linux 2.7u amd64
-            os: ubuntu-latest
-            pyver: cp27-cp27mu
-            piparch: manylinux1_x86_64
-
-          - name: linux 3.5 amd64
-            os: ubuntu-latest
-            pyver: cp35-cp35m
-            piparch: manylinux1_x86_64
 
           - name: linux 3.6 amd64
             os: ubuntu-latest
@@ -52,107 +38,24 @@ jobs:
             pyver: cp39-cp39
             piparch: manylinux2010_x86_64
 
-          # Linux py builds x64
-          - name: linux 2.7 i686
-            os: ubuntu-latest
-            pyver: cp27-cp27m
-            piparch: manylinux1_i686
-            pre: linux32
+         
+          # Linux py builds aarch64
 
-          - name: linux 2.7u i686
-            os: ubuntu-latest
-            pyver: cp27-cp27mu
-            piparch: manylinux1_i686
-            pre: linux32
-
-          - name: linux 3.5 i686
-            os: ubuntu-latest
-            pyver: cp35-cp35m
-            piparch: manylinux1_i686
-            pre: linux32
-
-          - name: linux 3.6 i686
+          - name: linux 3.6 aarch64
             os: ubuntu-latest
             pyver: cp36-cp36m
-            piparch: manylinux1_i686
-            pre: linux32
+            piparch: manylinux2014_aarch64
 
-          - name: linux 3.7 i686
+          - name: linux 3.7 aarch64
             os: ubuntu-latest
             pyver: cp37-cp37m
-            piparch: manylinux1_i686
-            pre: linux32
+            piparch: manylinux2014_aarch64
 
-          - name: linux 3.8 i686
+          - name: linux 3.8 aarch64
             os: ubuntu-latest
             pyver: cp38-cp38
-            piparch: manylinux1_i686
-            pre: linux32
-
-          - name: linux 3.9 i686
-            os: ubuntu-latest
-            pyver: cp39-cp39
-            piparch: manylinux2010_i686
-            pre: linux32
-
-          # OSX py builds
-          - name: osx 2.7 intel
-            os: macos-latest
-            python: "2.7"
-            piparch: macosx_10_9_intel
-
-          - name: osx 3.6 intel
-            os: macos-latest
-            python: "3.6"
-            piparch: macosx_10_9_intel
-
-          - name: osx 3.7 intel
-            os: macos-latest
-            python: "3.7"
-            piparch: macosx_10_9_intel
-
-          - name: osx 3.8 intel
-            os: macos-latest
-            python: "3.8"
-            piparch: macosx_10_9_intel
-
-          - name: osx 3.9 intel
-            os: macos-latest
-            python: "3.9"
-            piparch: macosx_10_9_intel
-
-          # Windows py builds
-
-          ## missing Microsoft Visual C++ 9.0
-          #- os: windows-latest
-          #  python: "2.7"
-          #  piparch: win_amd64
-
-          - name: win64 3.5
-            os: windows-latest
-            python: "3.5"
-            piparch: win_amd64
-
-          - name: win64 3.6
-            os: windows-latest
-            python: "3.6"
-            piparch: win_amd64
-
-          - name: win64 3.7
-            os: windows-latest
-            python: "3.7"
-            piparch: win_amd64
-
-          - name: win64 3.8
-            os: windows-latest
-            python: "3.8"
-            piparch: win_amd64
-
-          - name: win64 3.9
-            os: windows-latest
-            python: "3.9"
-            piparch: win_amd64
-
+            piparch: manylinux2014_aarch64
+            
     steps:
       - uses: actions/checkout@v2
         with:
