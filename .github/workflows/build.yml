@@ -105,6 +105,10 @@ jobs:
           python -c 'import epicscorelibs; print("IMPORT", epicscorelibs.__file__)'
           python -m nose2 -v epicscorelibs
 
+      - name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+
       - name: Docker PY build
         if: matrix.pyver && !matrix.source
         run: |
